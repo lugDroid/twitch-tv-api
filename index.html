@@ -25,15 +25,15 @@
 
       <h1 class="text-center">Twitch.tv Streamers</h1>
 
-      <div class="text-center">
-        <div class="btn-group" role="group">
+      <div class="row button-group text-center">
+        <div class="col-md-offset-3 col-md-6 col-sm-offset col-sm-2">
           <div type="button" id="btn-all" class="btn btn-default btn-active">All</div>
           <div type="button" id="btn-online" class="btn btn-default">Online</div>
           <div type="button" id="btn-offline" class="btn btn-default">Offline</div>
         </div>
       </div>
 
-    <div id="main-wrapper"></div>
+      <div id="main-wrapper"></div>
 
     </div>
 
@@ -46,11 +46,11 @@
             <img src="{{image}}" class="img-responsive img-circle" alt="">
           </a>
         </div>
-        <div class="col-md-3 center-vertically">
+        <div class="col-md-3 center-vertically text-center">
           <a href="{{link}}" target="_blank"class="channel-link">{{name}}</a>
         </div>
-        <div class="col-md-7 center-vertically">
-          <p>{{description}}</p>
+        <div class="col-md-7 center-vertically text-center">
+          <p class="description">{{description}}</p>
         </div>
       </div>
     </script>

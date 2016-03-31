@@ -36,7 +36,6 @@ $(document).ready(function() {
           $(this).show();
         }
       });
-      console.log(e);
       $(e.target).addClass('btn-active').siblings().removeClass('btn-active');
     });
 

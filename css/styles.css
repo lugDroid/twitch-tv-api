@@ -11,7 +11,7 @@ h1 {
   margin-bottom: 50px;
 }
 
-.btn-group {
+.button-group {
   margin: 0 auto 50px auto;
 }
 
@@ -48,4 +48,11 @@ img {
 
 .center-vertically {
   margin-top: 5%;
+}
+
+@media all and (max-width: 699px) {
+  img {
+    width: 100px;
+    margin: 0 auto;
+  }
 }
