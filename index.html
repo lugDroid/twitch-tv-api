@@ -21,35 +21,33 @@
     <![endif]-->
   </head>
   <body>
-    <div id="main-wrapper" class="container">
+    <div class="container">
 
-      <h1 class="text-center">Freecodecamp Twitch.tv JSON API</h1>
+      <h1 class="text-center">Twitch.tv Streamers</h1>
 
-      <!-- <div class="row channel-wrapper">
-        <div class="col-md-2">
-          <a href="#" class="thumbnail">
-            <img src="http://placehold.it/150X150" alt="">
-          </a>
+      <div class="text-center">
+        <div class="btn-group" role="group">
+          <div type="button" id="btn-all" class="btn btn-default btn-active">All</div>
+          <div type="button" id="btn-online" class="btn btn-default">Online</div>
+          <div type="button" id="btn-offline" class="btn btn-default">Offline</div>
         </div>
-        <div class="col-md-3 center-vertically">
-          <a href="#">Channel name</a>
-        </div>
-        <div class="col-md-7 center-vertically">
-          <p>Channel description</p>
-        </div>
-      </div> -->
+      </div>
+
+    <div id="main-wrapper"></div>
+
     </div>
+
 
     <!-- mustache template -->
     <script id="channel-template" type="text/template">
       <div class="row channel-wrapper">
         <div class="col-md-2">
-          <a href="{{link}}" target="_blank" class="thumbnail">
-            <img src="{{image}}" alt="">
+          <a href="{{link}}" target="_blank">
+            <img src="{{image}}" class="img-responsive img-circle" alt="">
           </a>
         </div>
         <div class="col-md-3 center-vertically">
-          <a href="{{link}}" target="_blank">{{name}}</a>
+          <a href="{{link}}" target="_blank"class="channel-link">{{name}}</a>
         </div>
         <div class="col-md-7 center-vertically">
           <p>{{description}}</p>

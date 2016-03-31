@@ -1,11 +1,49 @@
+body {
+  background-color: #19191f;
+}
+
 .container {
   width: 60%;
 }
 
+h1 {
+  color: white;
+  margin-bottom: 50px;
+}
+
+.btn-group {
+  margin: 0 auto 50px auto;
+}
+
+.btn {
+  min-width: 100px;
+}
+
+.btn-active {
+  background-color: #bbb ;
+}
+
 .channel-wrapper {
-  padding: 5px 0 0 0;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  padding: 15px 0 15px 0;
+  border-top: 1px solid #5D5D6D;
+  color: white;
+}
+
+.channel-wrapper:hover {
+  background-color: #3D3D47;
+}
+
+img {
+  border: 2px solid white;
+}
+
+.channel-link {
+  color: white;
+}
+
+.channel-link:hover {
+  color: #bbb;
+  text-decoration: none;
 }
 
 .center-vertically {

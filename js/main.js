@@ -15,9 +15,41 @@ $(document).ready(function() {
 
     // cache DOM
     var $channelHTML = $("#channel-template").html();
+    var $btnAll = $("#btn-all");
+    var $btnOnline = $("#btn-online");
+    var $btnOffline = $("#btn-offline");
+    var $mainWrapper = $("#main-wrapper");
 
     // bind events
-    // TODO: add buttons bindings
+    $btnAll.on("click", function(e) {
+      $mainWrapper.children().each(function() {
+        $(this).show();
+      });
+      $(e.target).addClass('btn-active').siblings().removeClass('btn-active');
+    });
+
+    $btnOnline.on("click", function(e) {
+      $mainWrapper.children().each(function(index, value) {
+        if ($(this).text().match(/Channel offline|Account closed/)) {
+          $(this).hide();
+        } else {
+          $(this).show();
+        }
+      });
+      console.log(e);
+      $(e.target).addClass('btn-active').siblings().removeClass('btn-active');
+    });
+
+    $btnOffline.on("click", function(e) {
+      $mainWrapper.children().each(function() {
+        if ($(this).text().match(/Channel offline|Account closed/)) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+      $(e.target).addClass('btn-active').siblings().removeClass('btn-active');
+    });
 
     // get streams info from twitch.tv
     function getStreamsInfo() {
@@ -33,7 +65,7 @@ $(document).ready(function() {
       // populate object properties
       if (data.error == "Unprocessable Entity") {
         channel.name = data.message.slice(data.message.indexOf("'") + 1, data.message.lastIndexOf("'"));
-        channel.description = "Account Closed";
+        channel.description = "Account closed";
         channel.image = "./img/twitch-logo.png";
         channel.link = "https://secure.twitch.tv";
         // render closed Account
@@ -67,7 +99,7 @@ $(document).ready(function() {
 
     // display information on screen
     function render(channel) {
-        $("#main-wrapper").append(Mustache.render($channelHTML, channel));
+        $mainWrapper.append(Mustache.render($channelHTML, channel));
     }
 
     return {
